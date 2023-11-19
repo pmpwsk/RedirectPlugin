@@ -9,7 +9,7 @@ public partial class RedirectPlugin : Plugin
         {
             string relPath = file.Remove(0, RedirectDirectory.Length);
             relPath = relPath.Replace('\\', '/');
-            relPath = relPath.Substring(0, relPath.Length - 4);
+            relPath = relPath[..^4];
             newRedirects.Add(relPath, File.ReadAllText(file));
         }
         Redirects = newRedirects;
