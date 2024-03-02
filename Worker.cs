@@ -4,7 +4,7 @@ public partial class RedirectPlugin : Plugin
 {
     public override Task Work()
     {
-        Dictionary<string, string> newRedirects = new();
+        Dictionary<string, string> newRedirects = [];
         foreach (string file in Directory.GetFiles(RedirectDirectory, "*.txt", SearchOption.AllDirectories))
         {
             string relPath = file.Remove(0, RedirectDirectory.Length);
