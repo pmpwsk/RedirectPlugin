@@ -7,7 +7,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageId>uwap.RedirectPlugin</PackageId>
     <Title>RedirectPlugin</Title>
-    <Version>0.0.0.1</Version>
+    <Version>1.0.1.2</Version>
     <Authors>pmpwsk</Authors>
     <Company>uwap.org</Company>
     <Description>Plugin for WebFramework that adds simple static redirects.</Description>
@@ -23,7 +23,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Web\WebFramework\WebFramework.csproj" />
+    <PackageReference Include="uwap.WebFramework" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
