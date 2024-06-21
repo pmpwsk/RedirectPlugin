@@ -1,4 +1,6 @@
-﻿namespace uwap.WebFramework.Plugins;
+﻿using uwap.WebFramework.Elements;
+
+namespace uwap.WebFramework.Plugins;
 
 public partial class RedirectPlugin : Plugin
 {
@@ -6,6 +8,8 @@ public partial class RedirectPlugin : Plugin
     {
         if (req.Method != "GET")
             throw new BadMethodSignal();
+
+        Presets.CreatePage(req, "RedirectPlugin");
 
         if (Redirects.TryGetValue(req.Path, out string? value))
             req.Redirect(value);
