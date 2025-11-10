@@ -1,6 +1,6 @@
 ﻿namespace uwap.WebFramework.Plugins;
 
-public partial class RedirectPlugin : Plugin
+public partial class RedirectPlugin
 {
     public RedirectPlugin()
     {
