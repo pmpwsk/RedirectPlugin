@@ -1,6 +1,4 @@
-﻿using uwap.WebFramework.Elements;
-
-namespace uwap.WebFramework.Plugins;
+﻿namespace uwap.WebFramework.Plugins;
 
 public partial class RedirectPlugin : Plugin
 {
