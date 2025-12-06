@@ -1,18 +1,15 @@
-﻿namespace uwap.WebFramework.Plugins;
+﻿using uwap.WebFramework.Responses;
+
+namespace uwap.WebFramework.Plugins;
 
 public partial class RedirectPlugin : Plugin
 {
-    public override Task Handle(Request req)
+    public override Task<IResponse> HandleAsync(Request req)
     {
-        if (req.Method != "GET")
-            throw new BadMethodSignal();
-
-        Presets.CreatePage(req, "RedirectPlugin");
+        req.ForceGET();
 
         if (Redirects.TryGetValue(req.Path, out string? value))
-            req.Redirect(value);
-        else throw new NotFoundSignal();
-
-        return Task.CompletedTask;
+            return Task.FromResult<IResponse>(new RedirectResponse(value));
+        return Task.FromResult<IResponse>(StatusResponse.NotFound);
     }
 }
