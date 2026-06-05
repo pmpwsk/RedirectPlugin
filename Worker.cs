@@ -2,7 +2,7 @@
 
 public partial class RedirectPlugin
 {
-    public override Task Work()
+    public override Task WorkAsync()
     {
         Dictionary<string, string> newRedirects = [];
         foreach (string file in Directory.GetFiles(RedirectDirectory, "*.txt", SearchOption.AllDirectories))
