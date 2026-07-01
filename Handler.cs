@@ -4,7 +4,7 @@ namespace uwap.WebFramework.Plugins;
 
 public partial class RedirectPlugin : Plugin
 {
-    public override Task<IResponse> HandleAsync(Request req)
+    public override Task<IResponse> HandleOtherAsync(Request req)
     {
         req.ForceGET();
 
